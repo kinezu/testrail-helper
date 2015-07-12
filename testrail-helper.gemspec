@@ -5,7 +5,7 @@ require 'testrail_helper/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "testrail_helper"
-  spec.version       = Create::VERSION
+  spec.version       = TestrailHelper::VERSION
   spec.authors       = ["kinezu"]
 
   spec.summary       = "A tool to help get and parse testrail data"
