@@ -1,0 +1,35 @@
+PATH
+  remote: .
+  specs:
+    testrail_helper (0.0.1)
+      json
+      testrail
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.22)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
+    i18n (0.7.0)
+    json (1.8.3)
+    multi_json (1.11.2)
+    multi_xml (0.5.5)
+    rake (10.4.2)
+    testrail (0.0.3)
+      activesupport (~> 3.1)
+      httparty (~> 0.11.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.10)
+  rake (~> 10.0)
+  testrail_helper!
+
+BUNDLED WITH
+   1.10.5
