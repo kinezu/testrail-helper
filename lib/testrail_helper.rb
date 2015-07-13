@@ -54,6 +54,20 @@ module TestrailHelper
       @master_list
     end
 
+    def update_test_case(case_id,params={})
+      puts "updating"
+      params.merge({title:get_title(case_id)})
+      puts params
+      uri = "update_case/#{case_id}"
+      puts @client.send_post(uri,params)
+    end
+
+    def get_title(case_id)
+      puts "getting title"
+      uri = "get_case/#{case_id}"
+      @client.send_get(uri)
+    end
+
     def write_to_file(list,filename)
       File.open(filename, "w+") do |f|
         list.each { |element| f.puts(element) }

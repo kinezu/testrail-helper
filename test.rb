@@ -14,3 +14,6 @@ filtered_cases_with_or  = client.filter_by_fields_or(cases,priority_id: 4, creat
 
 # write list to file
 write_to_file(cases,'/output/filename')
+
+# update a test case by simply putting the test_id
+update_test_case(12345,priority_id:2,type_id:1)
