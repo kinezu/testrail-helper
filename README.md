@@ -35,6 +35,18 @@ filtered_cases_with_or  = client.filter_by_fields_or(cases,priority_id: 4, creat
 
 # write list to file
 write_to_file(cases,'/output/filename')
+
+# update a test case by simply putting the test_id
+client.update_test_case(217617,type_id:1)
+
+# get a test plan, including details on each run
+client.get_plan(2609)
+
+# get a summary of a test run
+client.get_run_info(2610)
+
+# get all test caes in a run
+client.get_tests(2610)
 ```
 
 ## Development

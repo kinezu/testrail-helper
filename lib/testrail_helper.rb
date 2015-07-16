@@ -20,7 +20,22 @@ module TestrailHelper
       @client.send_get(uri)
     end
 
-    def filter_by_fields_and(list,params={})
+    def get_run_info(run_id)
+      uri = "get_run/#{run_id}"
+      @client.send_get(uri)
+    end
+
+    def get_tests(run_id)
+      uri = "get_tests/#{run_id}"
+      @client.send_get(uri)
+    end
+
+    def get_plan(plan_id)
+      uri = "get_plan/#{plan_id}"
+      @client.send_get(uri)
+    end
+
+    def filter_by_fields_and(list, params={})
       @master_list = list
       @temp_list = []
       h = params.map
@@ -38,7 +53,7 @@ module TestrailHelper
       @master_list
     end
 
-    def filter_by_fields_or(list,params={})
+    def filter_by_fields_or(list, params={})
       @temp_list = list
       h = params.map
       h.each do |par|
@@ -54,7 +69,7 @@ module TestrailHelper
       @master_list
     end
 
-    def update_test_case(case_id,params={})
+    def update_test_case(case_id, params={})
       puts "updating"
       params.merge({title:get_title(case_id)})
       puts params
@@ -68,7 +83,7 @@ module TestrailHelper
       @client.send_get(uri)
     end
 
-    def write_to_file(list,filename)
+    def write_to_file(list, filename)
       File.open(filename, "w+") do |f|
         list.each { |element| f.puts(element) }
       end
