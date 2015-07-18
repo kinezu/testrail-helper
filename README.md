@@ -47,6 +47,18 @@ client.get_run_info(2610)
 
 # get all test caes in a run
 client.get_tests(2610)
+
+# get all users
+client get_all_users
+
+# get all active users
+client get_all_active_users
+
+# get user by id
+client.get_user(4)
+
+# get user by email
+client.get_user_by_email("guybrush@SCUMM.com)
 ```
 
 ## Development

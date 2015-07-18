@@ -77,6 +77,35 @@ module TestrailHelper
       puts @client.send_post(uri,params)
     end
 
+    def get_all_users
+      puts "getting all users"
+      uri = "get_users"
+      @client.send_get(uri)
+    end
+
+    def get_all_active_users
+      puts "getting all active_users"
+      uri = "get_users"
+      users = @client.send_get(uri)
+      active_users = []
+      users.each do |x|
+        active_users << x if x.fetch('is_active') == true
+      end
+      active_users
+    end
+
+    def get_user(user_id)
+      puts "getting title"
+      uri = "get_user/#{user_id}"
+      @client.send_get(uri)
+    end
+
+    def get_user_by_email(email)
+      puts "getting title"
+      uri = "get_user_by_email&email=#{email}"
+      @client.send_get(uri)
+    end
+
     def get_title(case_id)
       puts "getting title"
       uri = "get_case/#{case_id}"
