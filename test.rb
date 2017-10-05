@@ -17,3 +17,8 @@ write_to_file(cases,'/output/filename')
 
 # update a test case by simply putting the test_id
 update_test_case(12345,priority_id:2,type_id:1)
+
+# results
+get_test_plan("5000")
+get_test_run("5001")
+get_results_for_run("5001")
