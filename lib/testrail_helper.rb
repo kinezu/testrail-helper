@@ -117,5 +117,21 @@ module TestrailHelper
         list.each { |element| f.puts(element) }
       end
     end
+
+    def get_test_plan(plan_id)
+      uri = "get_plan/#{plan_id}"
+      @client.send_get(uri)
+    end
+
+
+    def get_test_run(run_id)
+      uri = "get_run/#{run_id}"
+      @client.send_get(uri)
+    end
+
+    def get_results_for_run(run_id)
+      uri = "get_results_for_run/#{run_id}"
+      @client.send_get(uri)
+    end
   end
 end
