@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    testrail_helper (0.0.2)
+    testrail_helper (0.0.6)
       json
       testrail
 
