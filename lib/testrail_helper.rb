@@ -20,6 +20,13 @@ module TestrailHelper
       @client.send_get(uri)
     end
 
+    def get_test_cases(params={})
+      uri = "get_cases/#{params[:project_id]}&suite_id=#{params[:project_id]}"
+      uri = uri + "&suite_id=#{params[:suite_id]}" if params[:suite_id]
+      uri = uri + "&section_id=#{params[:section_id]}" if params[:section_id]
+      @client.send_get(uri)
+    end
+
     def get_run_info(run_id)
       uri = "get_run/#{run_id}"
       @client.send_get(uri)
