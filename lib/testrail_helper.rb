@@ -140,5 +140,10 @@ module TestrailHelper
       uri = "get_results_for_run/#{run_id}"
       @client.send_get(uri)
     end
+
+    def get_sections(project_id, suite_id)
+      uri = "get_sections/#{project_id}&suite_id=#{suite_id}"
+      @client.send_get(uri)
+    end
   end
 end
