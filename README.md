@@ -59,6 +59,9 @@ client.get_user(4)
 
 # get user by email
 client.get_user_by_email("guybrush@SCUMM.com)
+
+# get sections
+client.get_sections(project_id, suite_id)
 ```
 
 ## Development
