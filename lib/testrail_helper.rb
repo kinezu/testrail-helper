@@ -1,4 +1,4 @@
-require 'testrail'
+require 'testrail_client'
 require 'json'
 
 require File.expand_path(File.dirname(__FILE__) + '/testrail_api')
