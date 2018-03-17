@@ -62,6 +62,14 @@ client.get_user_by_email("guybrush@SCUMM.com)
 
 # get sections
 client.get_sections(project_id, suite_id)
+
+# create test plan
+client.create_test_plan(34, name: 'test plan')
+
+# create test plan entry
+client.add_plan_entry(432, suite_id: 2, name: 'run name', include_all: false, case_ids: [1, 2, 3])
+
+
 ```
 
 ## Development
