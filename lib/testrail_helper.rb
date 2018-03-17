@@ -24,6 +24,7 @@ module TestrailHelper
       uri = "get_cases/#{params[:project_id]}&suite_id=#{params[:project_id]}"
       uri = uri + "&suite_id=#{params[:suite_id]}" if params[:suite_id]
       uri = uri + "&section_id=#{params[:section_id]}" if params[:section_id]
+      uri = uri + "&priority_id=#{params[:priority_id]}" if params[:priority_id]
       @client.send_get(uri)
     end
 
@@ -81,7 +82,7 @@ module TestrailHelper
       params.merge({title:get_title(case_id)})
       puts params
       uri = "update_case/#{case_id}"
-      puts @client.send_post(uri,params)
+      puts @client.send_post(uri, params)
     end
 
     def get_all_users
@@ -144,6 +145,16 @@ module TestrailHelper
     def get_sections(project_id, suite_id)
       uri = "get_sections/#{project_id}&suite_id=#{suite_id}"
       @client.send_get(uri)
+    end
+
+    def create_test_plan(project_id, params={})
+      uri = "add_plan/#{project_id}"
+      @client.send_post(uri, params)
+    end
+
+    def add_plan_entry(plan_id, params={})
+      uri = "add_plan_entry/#{plan_id}"
+      @client.send_post(uri, params)
     end
   end
 end
