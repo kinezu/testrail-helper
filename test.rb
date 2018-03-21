@@ -35,4 +35,3 @@ cases.each do |caze|
 end
 
 client.add_plan_entry(plan['id'], suite_id: 10685, name: 'run name', include_all: false, case_ids: case_ids)
-
